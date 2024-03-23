@@ -18,10 +18,10 @@ export const getEntriesByType = async (type: string) => {
     return response.items;
 };
 
-export const getBlogPosts = async () => {
-    const results = await getEntriesByType('blogPost');
-    const blogPosts = results.map((blog) => blog.fields);
+export const getPosts = async () => {
+    const response = await client.getEntries({ content_type: 'blogPost' });
 
-    console.log('🚀 ~ getBlogPosts ~ blogPosts:', blogPosts);
-    return blogPosts;
+    return {
+        posts: response.items
+    };
 };

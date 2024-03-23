@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "ci": "rm -rf .next && rm -rf node_modules && yarn",
-        "cm": "git cz",
+        "cm": "npx cz",
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
@@ -21,6 +21,7 @@
         "@types/node": "^20.11.29",
         "@types/react": "18.2.67",
         "autoprefixer": "^10.4.18",
+        "commitizen": "^4.3.0",
         "contentful-ts-type-generator": "github:arimkevi/contentful-ts-type-generator",
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^8",
