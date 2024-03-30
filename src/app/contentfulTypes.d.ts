@@ -1,7 +1,12 @@
 import { Entry, Asset } from 'contentful';
+import { metadata } from './layout';
 export const BlogPost = 'blogPost';
 
-export interface Fields {
+export interface Items {
+    readonly posts?: ReadonlyArray<BlogPost>;
+}
+
+export interface BlogPostFields {
     readonly author?: Entry<Person>;
     readonly body: { content: any; data: any; nodeType: string };
     readonly description: { content: any; data: any; nodeType: string };
@@ -13,10 +18,19 @@ export interface Fields {
     readonly title: string;
 }
 
+export interface BlogPostSys {
+    readonly id: string;
+    readonly createdAt: string;
+    readonly updatedAt: string;
+    readonly space: { sys: { type: string; linkType: string; id: string } };
+}
+
 export interface BlogPost {
     //Blog Post
     /*  */
     fields: Fields;
+    metadata: string[];
+    sys: Sys;
 }
 
 export const Homepage = 'homepage';

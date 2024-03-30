@@ -1,6 +1,6 @@
 import { createClient } from 'contentful';
 
-import { BlogPost } from '@/app/contentfulTypes';
+import { BlogPost, Items } from '@/app/contentfulTypes';
 
 export const createContentClient = () => {
     return createClient({
@@ -21,6 +21,7 @@ export const getEntriesByType = async (type: string) => {
 export const getPosts = async () => {
     const response = await client.getEntries({ content_type: 'blogPost' });
 
+    // <Promise, { posts: BlogPost[] }>
     return {
         posts: response.items
     };
