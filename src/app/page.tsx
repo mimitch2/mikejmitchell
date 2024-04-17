@@ -3,7 +3,7 @@ import './globals.css';
 const Home = () => {
     return (
         <div>
-            <h1 className="text-4xl font-bold">Hello world</h1>
+            <h1>Hello world</h1>
         </div>
     );
 };
