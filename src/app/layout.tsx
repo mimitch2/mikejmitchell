@@ -23,13 +23,13 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         <html lang="en">
             <body className={`${font.className} container mx-auto font-light`}>
                 <div className="flex flex-col h-screen justify-between">
-                    <header className="flex justify-between items-center px-8 py-4">
+                    <header className="flex justify-between items-end px-8 py-4">
                         <Heading level={1}>Mike Mitchell</Heading>
-                        <div className="flex gap-4 justify-end pt-4">
+                        <nav className="flex gap-4 justify-end pb-2">
                             <LinkComponent href="/">Home</LinkComponent>
                             <LinkComponent href="/photos">Photos</LinkComponent>
                             <LinkComponent href="/about">About</LinkComponent>
-                        </div>
+                        </nav>
                     </header>
                     <main className="p-10 mb-auto">{children}</main>
                     <footer className="p-4 w-full text-center">bar</footer>

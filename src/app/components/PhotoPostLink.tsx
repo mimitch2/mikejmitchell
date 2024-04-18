@@ -35,7 +35,7 @@ const PhotoPostLink = ({
                     objectPosition="center" // Optional: Adjusts the alignment of the image
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 h-2/4">
-                    <Heading level={3} weight="normal">
+                    <Heading level={3} weight="normal" color="x-light">
                         {title}
                     </Heading>
                 </div>

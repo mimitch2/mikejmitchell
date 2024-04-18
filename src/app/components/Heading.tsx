@@ -8,6 +8,7 @@ const font = Saira_Condensed({
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6;
 type Weight = 'light' | 'normal' | 'medium' | 'bold';
+type Color = 'base' | 'light' | 'x-light';
 
 const LEVEL_TO_FONT_SIZE_MAP: { [key in Level]: string } = {
     1: 'text-6xl',
@@ -18,17 +19,25 @@ const LEVEL_TO_FONT_SIZE_MAP: { [key in Level]: string } = {
     6: 'text-xl'
 };
 
+const COLOR_TO_CLASS_MAP: { [key in Color]: string } = {
+    base: 'text-slate-700',
+    light: 'text-slate-400',
+    'x-light': 'text-slate-200'
+};
+
 const Heading = ({
     children,
-    level,
-    weight = 'medium'
+    level = 1,
+    weight = 'medium',
+    color = 'base'
 }: {
-    children: string;
-    level: Level;
+    children: string | number;
+    level?: Level;
     weight?: Weight;
+    color?: Color;
 }) => {
     const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-    const className = `${LEVEL_TO_FONT_SIZE_MAP[level]} font-${weight} ${font.className}`;
+    const className = `${LEVEL_TO_FONT_SIZE_MAP[level]} ${COLOR_TO_CLASS_MAP[color]} font-${weight} ${font.className}`;
 
     return <Tag className={className}>{children}</Tag>;
 };

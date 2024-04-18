@@ -21,10 +21,15 @@
     transition: transform 0.3s ease;
 }
 
-.current-underline::before {
-    transform: scaleX(1);
+.other-route {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.hover-underline:hover::before {
+.other-route:hover {
+    opacity: 0.5;
+}
+
+.current-underline::before {
     transform: scaleX(1);
 }
