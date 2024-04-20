@@ -17,8 +17,6 @@ const font = Source_Code_Pro({
 });
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
-    // const { posts } = await getPosts();
-
     return (
         <html lang="en">
             <body className={`${font.className} container mx-auto font-light`}>

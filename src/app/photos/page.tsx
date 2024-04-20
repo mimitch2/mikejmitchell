@@ -11,6 +11,7 @@ const Photos = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             const items = await getPosts();
+            // @ts-ignore
             setPosts(items.posts);
         };
 
@@ -26,11 +27,15 @@ const Photos = () => {
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ type: 'just', delay: i && i * 0.1 }}
+                            // @ts-ignore
                             key={post.fields.slug}
                         >
                             <PhotoPostLink
+                                // @ts-ignore
                                 slug={post.fields.slug as string}
+                                // @ts-ignore
                                 img={post.fields.heroImage}
+                                // @ts-ignore
                                 title={post.fields.title}
                             />
                         </motion.div>
