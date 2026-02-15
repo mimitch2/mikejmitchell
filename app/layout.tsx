@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Jura } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 
@@ -8,6 +9,10 @@ export const metadata: Metadata = {
         'Professional photography portfolio showcasing galleries and collections'
 };
 
+const jura = Jura({
+    subsets: ['latin']
+});
+
 export default function RootLayout({
     children
 }: Readonly<{
@@ -15,7 +20,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="antialiased bg-gray-50">
+            <body className={`antialiased bg-gray-50 ${jura.className}`}>
                 <Header />
                 <main className="min-h-screen">{children}</main>
                 <footer className="bg-white border-t mt-12">
