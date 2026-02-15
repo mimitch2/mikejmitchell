@@ -1,30 +1,32 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import Header from '@/components/Header'
+import type { Metadata } from 'next';
+import './globals.css';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
-  title: 'Mike J Mitchell - Photo Portfolio',
-  description: 'Professional photography portfolio showcasing galleries and collections',
-}
+    title: 'Mike J Mitchell - Photo Portfolio',
+    description:
+        'Professional photography portfolio showcasing galleries and collections'
+};
 
 export default function RootLayout({
-  children,
+    children
 }: Readonly<{
-  children: React.ReactNode
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className="antialiased bg-gray-50">
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <footer className="bg-white border-t mt-12">
-          <div className="container mx-auto px-4 py-6 text-center text-gray-600">
-            <p>&copy; {new Date().getFullYear()} Mike J Mitchell. All rights reserved.</p>
-          </div>
-        </footer>
-      </body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <body className="antialiased bg-gray-50">
+                <Header />
+                <main className="min-h-screen">{children}</main>
+                <footer className="bg-white border-t mt-12">
+                    <div className="container mx-auto px-4 py-6 text-center text-gray-600">
+                        <p>
+                            &copy; {new Date().getFullYear()} Mike J Mitchell.
+                            All rights reserved.
+                        </p>
+                    </div>
+                </footer>
+            </body>
+        </html>
+    );
 }
